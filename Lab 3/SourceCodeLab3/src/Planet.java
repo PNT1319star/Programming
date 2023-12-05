@@ -16,5 +16,5 @@ public class Planet {
     public SttOfFalling getSttOfFalling(){
         return statusOfFalling;
     }
-    
+
 }

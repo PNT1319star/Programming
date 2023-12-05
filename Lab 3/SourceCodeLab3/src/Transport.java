@@ -1,7 +1,7 @@
 import java.util.Objects;
 
 abstract public class Transport {
-    protected String model; 
+    protected String model;
     protected Coordinate coord;
 
     abstract public void Move(Coordinate coord);
@@ -27,7 +27,7 @@ abstract public class Transport {
     public String toString() {
         return "Transport{" +
                 "model='" + model + '\'' +
-                ", abs=" + coord.getAbs() + 
+                ", abs=" + coord.getAbs() +
                 ", ord=" + coord.getOrd()+
                 '}';
     }

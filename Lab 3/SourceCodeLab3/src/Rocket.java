@@ -8,12 +8,14 @@ public class Rocket extends Transport {
     public void Move(Coordinate coord) {
         this.coord = coord;
     }
-
+    public String getModel(){
+        return model;
+    }
     public double getAbs() {
-        return coord.getAbs();  
+        return coord.getAbs();
     }
 
     public double getOrd() {
-        return coord.getOrd(); 
+        return coord.getOrd();
     }
 }
