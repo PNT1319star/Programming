@@ -3,17 +3,19 @@ public class ZeroGravityDevice{
     private double speedOfPlanet;
     private SttDevice state;
     public ZeroGravityDevice(double speedOfPlanet){
-        state=SttDevice.OFF;
+        state =SttDevice.OFF;
         this.speedOfPerson=this.speedOfPlanet=speedOfPlanet;
     }
     public void turnOn(){
-        state=SttDevice.ON;
-        this.speedOfPerson=0;
-        System.out.println("Device is turned on");
+        state = SttDevice.ON;
+        state.getDescription();
+        this.speedOfPerson = 0;
+
     }
     public void turnOff(){
-        state=SttDevice.OFF;
-        this.speedOfPerson=this.speedOfPlanet;
-        System.out.println("Device is turned off");
+        state = SttDevice.OFF;
+        state.getDescription();
+        this.speedOfPerson = this.speedOfPlanet;
     }
+    public double height(double speedOfPerson, double s)
 }
