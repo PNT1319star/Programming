@@ -12,14 +12,14 @@ public class Person implements IPersonRun, IPerson, IPersonFly,IPersonChase,IPer
     protected double weight;
     protected double height;
     protected Rocket rocket;
-    protected Status status;
+    protected SttOfGravity status;
     public Person (String name, double weight, Coordinate coord, Planet planet, Rocket rocket){
         this.name = name;
         this.weight = weight;
         this.coord = coord;
         this.planet = planet;
         this.speed = planet.getSpeed();
-        this.status = Status.WEIGHTED;
+        this.status = SttOfGravity.WEIGHTED;
         this.rocket = rocket;
     }
     public Person (String name,double weight, Planet planet, Rocket rocket){
@@ -27,7 +27,7 @@ public class Person implements IPersonRun, IPerson, IPersonFly,IPersonChase,IPer
         this.weight = weight;
         this.planet = planet;
         this.speed = planet.getSpeed();
-        this.status = Status.WEIGHTED;
+        this.status = SttOfGravity.WEIGHTED;
         this.rocket = rocket;
     }
 
@@ -68,30 +68,37 @@ public class Person implements IPersonRun, IPerson, IPersonFly,IPersonChase,IPer
         this.weight = weight;
     }
 
+    @CustomLogging("This method represents the jumping action.")
     @Override
     public void jump() {
         System.out.printf("%s is jumping out of the rocket\n", name);
     }
 
+    @CustomLogging("This method represents the noticing action.")
     @Override
     public void notice() {
         System.out.printf("%s is seeing the fantastic jump\n", name);
     }
 
+    @CustomLogging("This method represents the stretching out action.")
     @Override
     public void stretchOut() {
         System.out.printf("%s is stretching out on the surface\n", name);
     }
 
+    @CustomLogging("This method represents the soaring up action.")
     @Override
     public void soarUp() {
         System.out.printf("%s is soaring up\n", name);
     }
 
+    @CustomLogging("This method represents the flying down action.")
     @Override
     public void flyDown() {
         System.out.printf("%s is flying down\n", name);
     }
+
+    @CustomLogging("This method represents the running action.")
     @Override
     public void run(Coordinate coord, int steps) {
         System.out.printf("%s runned %d steps.\n",name, steps);
@@ -99,11 +106,13 @@ public class Person implements IPersonRun, IPerson, IPersonFly,IPersonChase,IPer
 
     }
 
+    @CustomLogging("This method represents the stopping action.")
     @Override
     public void stop() {
         System.out.printf("%s stop.\n",name);
     }
 
+    @CustomLogging("This method represents the chasing action.")
     @Override
     public void chase(Person person) {
         System.out.printf("%s is chasing after %s\n", this.name, person.getName());

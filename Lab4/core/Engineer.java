@@ -18,7 +18,7 @@ public class Engineer extends Person implements IEngineer {
 
     @Override
     public void enableZeroGravityDevice(ZeroGravityDevice zeroGravityDevice) {
-        this.status = Status.WEIGHTLESS;
+        this.status = SttOfGravity.WEIGHTLESS;
         try {
             zeroGravityDevice.turnOn(this);
         } catch (ZeroGravityException e) {
@@ -29,7 +29,7 @@ public class Engineer extends Person implements IEngineer {
 
     @Override
     public void disableZeroGravityDevice(ZeroGravityDevice zeroGravityDevice) {
-        this.status = Status.WEIGHTED;
+        this.status = SttOfGravity.WEIGHTED;
         try {
             zeroGravityDevice.turnOff(this);
         } catch (ZeroGravityException e) {

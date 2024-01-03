@@ -8,11 +8,14 @@ public class Universe {
         Planet mars = new Planet("Mars", 5.66, 3.7);
         Coordinate coordRocket = new Coordinate(0, 0);
         Coordinate coordZnayka = new Coordinate(10, 0);
-        Rocket itmo = new Rocket("ITMO", coordRocket);
+        Rocket itmo = new Rocket("ITMO", coordRocket,2000, 20000);
         Engineer klepka = new Engineer("Klepka", 70, moon, itmo);
         Engineer zvezdochkin = new Engineer("Zvezdochkin", 2, earth, itmo);
         Engineer znayka = new Engineer("Znayka", 66, coordZnayka, moon, itmo);
         ZeroGravityDevice itmoDevice = new ZeroGravityDevice("itmoDevice", 100, 100);
+
+        System.out.println("Our story starts!");
+
         znayka.jump();
         klepka.jump();
         zvezdochkin.jump();
@@ -20,12 +23,12 @@ public class Universe {
         zvezdochkin.chase(znayka);
         znayka.runOrStop(znayka, itmo);
         znayka.enableZeroGravityDevice(itmoDevice);
-        System.out.println(Status.WEIGHTLESS.getDescription());
+        System.out.println(SttOfGravity.WEIGHTLESS.getDescription());
         klepka.soarUp();
         zvezdochkin.soarUp();
         znayka.notice();
         znayka.disableZeroGravityDevice(itmoDevice);
-        System.out.println(Status.WEIGHTED.getDescription());
+        System.out.println(SttOfGravity.WEIGHTED.getDescription());
         klepka.flyDown();
         zvezdochkin.flyDown();
         klepka.stretchOut();
@@ -49,10 +52,12 @@ public class Universe {
                 klepka.getPlanet().getName(), klepka.getPlanet().damage(klepka));
         System.out.println(klepka.getPlanet().getSttOfFalling().getDescription());
         System.out.println(itmoDevice.getParameters().toString());
+        itmo.launch();
         itmoDevice.turnOn(klepka);
         Person nullPerson = null;
         itmoDevice.turnOn(nullPerson);
         Coordinate nullCoordinate = null;
         itmo.move(nullCoordinate);
+        System.out.println("Our story ends!");
     }
 }

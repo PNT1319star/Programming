@@ -1,16 +1,16 @@
 package core;
 
-import utility.SttDevice;
+import utility.SttOfDevice;
 import java.util.Objects;
 
 public class ZeroGravityDevice {
     private String name;
-    private SttDevice state;
+    private SttOfDevice state;
     private DeviceParameters parameters;
 
     public ZeroGravityDevice(String name, int weightCapacity, int batteryLevel) {
         this.name = name;
-        state = SttDevice.OFF;
+        state = SttOfDevice.OFF;
         parameters = new DeviceParameters(weightCapacity, batteryLevel);
     }
 
@@ -24,7 +24,7 @@ public class ZeroGravityDevice {
                     "Person weight is not within the acceptable range. Device safety lock can not be activated.");
         }
 
-        state = SttDevice.ON;
+        state = SttOfDevice.ON;
         state.getDescription();
         person.setSpeed(0);
     }
@@ -39,7 +39,7 @@ public class ZeroGravityDevice {
                     "Person weight is not within the acceptable range. Device safety lock can not be activated.");
         }
 
-        state = SttDevice.OFF;
+        state = SttOfDevice.OFF;
         state.getDescription();
         person.setSpeed(person.planet.getSpeed());
     }
@@ -48,7 +48,7 @@ public class ZeroGravityDevice {
         return name;
     }
 
-    public SttDevice getState() {
+    public SttOfDevice getState() {
         return state;
     }
 
