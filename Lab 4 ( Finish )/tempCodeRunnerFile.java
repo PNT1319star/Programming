@@ -1,0 +1,16 @@
+znayka.enableZeroGravityDevice(itmoDevice, itmo);
+        System.out.println(SttOfGravity.WEIGHTLESS.getDescription());
+        klepka.soarUp();
+        zvezdochkin.soarUp();
+        znayka.see();
+        znayka.disableZeroGravityDevice(itmoDevice, itmo);
+        System.out.println(SttOfGravity.WEIGHTED.getDescription());
+        klepka.flyDown();
+        zvezdochkin.flyDown();
+        klepka.stretchOut();
+        zvezdochkin.stretchOut();
+        znayka.getPlanet().damage(znayka);
+        klepka.getPlanet().damage(klepka);
+        zvezdochkin.getPlanet().damage(zvezdochkin);
+        doraemon.jump();
+        doraemon.waiting(znayka);
