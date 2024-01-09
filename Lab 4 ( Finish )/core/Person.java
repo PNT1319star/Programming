@@ -119,7 +119,7 @@ public class Person implements IPersonRun,IPersonFly, IPersonHug, IPersonJoke, I
         };
         System.out.printf("%s moves to %s\n", getName(), name);
         place.positionMarker();
-        setCoord(coord);
+        this.setCoord(coord);
     }
 
     @CustomLogging("This method represents the chasing action.")
@@ -144,7 +144,7 @@ public class Person implements IPersonRun,IPersonFly, IPersonHug, IPersonJoke, I
     @Override
     public void runOrStop(Rocket rocket) {
         double i = 1.0;
-        Coordinate rocketCoord = rocket.getCoord();
+        Coordinate rocketCoord = new Coordinate(rocket.getCoord().getAbs(),rocket.getCoord().getOrd() );
         Coordinate personCoord = this.getCoord();
         while (Coordinate.distance(personCoord, rocketCoord) < fixedDistance) {
             personCoord.setAbs(personCoord.getAbs() + lengthOfStep);

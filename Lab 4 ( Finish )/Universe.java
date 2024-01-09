@@ -19,7 +19,7 @@ public class Universe {
         itmo.launch();
         doraemon.playingAJoke(znayka);
         znayka.shout();
-        znayka.move("Hello", new Coordinate(50, 0));
+        znayka.move(itmo.getName(), itmo.getCoord());
         znayka.checkZeroGravityDevice(itmoDevice);
         znayka.enableZeroGravityDevice(itmoDevice, itmo);
         znayka.jump();
