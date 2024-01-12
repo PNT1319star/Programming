@@ -3,7 +3,7 @@ package core;
 import java.util.Objects;
 import utility.*;
 
-public class Person implements IPersonRun,IPersonFly, IPersonHug, IPersonJoke, IPersonJump, IPersonMove, IPersonSee,
+public class Person implements IPersonRun, IPersonFly, IPersonHug, IPersonJoke, IPersonJump, IPersonMove, IPersonSee,
         IPersonShout, IPersonStretchOut, IPersonWait {
 
     final double fixedDistance = 100.0;
@@ -133,9 +133,10 @@ public class Person implements IPersonRun,IPersonFly, IPersonHug, IPersonJoke, I
     public void stop() {
         System.out.printf("%s stops.\n", name);
     }
+
     @Override
     public void run(Coordinate coord, double steps) {
-        System.out.printf("%s runs %f steps.\n",name, steps);
+        System.out.printf("%s runs %f steps.\n", name, steps);
         this.coord = coord;
 
     }
@@ -144,8 +145,8 @@ public class Person implements IPersonRun,IPersonFly, IPersonHug, IPersonJoke, I
     @Override
     public void runOrStop(Rocket rocket) {
         double i = 1.0;
-        Coordinate rocketCoord = new Coordinate(rocket.getCoord().getAbs(),rocket.getCoord().getOrd() );
-        Coordinate personCoord = this.getCoord();
+        Coordinate rocketCoord = new Coordinate(rocket.getCoord().getAbs(), rocket.getCoord().getOrd());
+        Coordinate personCoord = new Coordinate(this.getCoord().getAbs(), this.getCoord().getOrd());
         while (Coordinate.distance(personCoord, rocketCoord) < fixedDistance) {
             personCoord.setAbs(personCoord.getAbs() + lengthOfStep);
             IPersonRun runner = (coord, steps) -> {

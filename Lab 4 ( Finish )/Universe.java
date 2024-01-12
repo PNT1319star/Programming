@@ -5,7 +5,7 @@ public class Universe {
     public static void main(String[] args) {
         Planet moon = new Planet("Moon", 3679.2, 1.625);
         Planet earth = new Planet("Earth", 1.67, 9.8);
-        Coordinate coordRocket = new Coordinate(0.0, 0.0);
+        Coordinate coordRocket = new Coordinate(10.0, 0.0);
         Coordinate coordZnayka = new Coordinate(20.0, 0.0);
         Rocket itmo = new Rocket("RocketITMO", coordRocket, 20000, 20000);
         Engineer klepka = new Engineer("Klepka", 70, moon, itmo);
@@ -30,6 +30,7 @@ public class Universe {
         znayka.runOrStop(itmo);
         itmoDevice.setCoord(znayka.getCoord());
         znayka.enableZeroGravityDevice(itmoDevice, itmo);
+        System.out.println(znayka.getCoord().getAbs());
         klepka.soarUp();
         zvezdochkin.soarUp();
         znayka.see();

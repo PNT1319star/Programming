@@ -32,7 +32,8 @@ public class Planet {
         return statusOfFalling;
     }
 
-    // Calculate the percentage of fall damage on each planet (Рассчитать процент урона от падения на каждой планете.)
+    // Calculate the percentage of fall damage on each planet (Рассчитать процент
+    // урона от падения на каждой планете.)
     public double damage(Person person) {
         double percentOfDamage = 0.1 * Math.pow(person.getWeight(), 0.75) * Math.pow(gravity, 1.5);
 
