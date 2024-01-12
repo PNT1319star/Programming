@@ -30,7 +30,6 @@ public class Universe {
         znayka.runOrStop(itmo);
         itmoDevice.setCoord(znayka.getCoord());
         znayka.enableZeroGravityDevice(itmoDevice, itmo);
-        System.out.println(znayka.getCoord().getAbs());
         klepka.soarUp();
         zvezdochkin.soarUp();
         znayka.see();
